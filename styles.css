@@ -1,0 +1,297 @@
+/*styles for display less than 996px: tablet, ipad */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+html {
+    background-color: rgba(252, 94, 252, 0.116);
+}
+
+.navWrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5pc;
+    background-color: rgb(245, 187, 245);
+    z-index: 10;
+}
+
+.mainTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2pc;
+}
+
+#nav-search {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 3pc;
+    padding: .6pc;
+}
+
+.search {
+    width: 30%;
+    height: 1.5pc;
+    border-radius: 1pc;
+}
+
+.search[placeholder="Dress..."] {
+    padding-left: .8pc;
+}
+
+
+/* main container styles */
+
+.container {
+    margin: 5pc auto;
+    display: grid;
+    grid-template-columns: 1.5fr 5fr;
+}
+
+.container>* {
+    box-shadow: 0 0 .6pc .006pc #eee;
+}
+
+
+/*vertical menu styles */
+
+.nav-title-1 {
+    padding: .4pc;
+}
+
+
+/* menu to appear when a vertical bars menu is clicked - use js:
+    function not enabled;
+    */
+
+.v-menu {
+    position: sticky;
+    top: 5pc;
+    height: 70ch;
+    padding: .1pc;
+}
+
+.v-list {
+    margin-bottom: 1pc;
+}
+
+.tile {
+    height: 1pc;
+    padding: 1pc;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tile:hover {
+    background-color: purple;
+}
+
+.tile:hover a {
+    color: #eee;
+}
+
+.h-tile {
+    background-color: purple;
+    color: #eee;
+}
+
+.tile>a {
+    text-decoration: none;
+    color: #000;
+    width: 4.5pc;
+    height: 1.5pc;
+    border-bottom: .1pc solid;
+}
+
+.h-tile a {
+    color: #eee;
+}
+
+.tile-img {
+    width: 1.5pc;
+    height: 1.5pc;
+    border-radius: 100%;
+}
+
+
+/* container central header styles */
+
+.central {
+    background-color: rgba(252, 94, 252, 0.116);
+}
+
+
+/* you need not make a flex container, if it has inline children/ descedants */
+
+.c-header {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    padding: 1pc;
+}
+
+.h-title {
+    font-size: 3pc;
+}
+
+.h-img {
+    width: 20pc;
+    border-radius: .4pc;
+}
+
+
+/* styles for central content section */
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(20pc, auto);
+    gap: 1pc;
+    padding: 1pc;
+}
+
+.content>* {
+    box-shadow: 0 0 .6pc .006pc #eee;
+}
+
+.item-card {
+    background-color: rgba(255, 255, 255, 0.664);
+}
+
+.item-img {
+    width: 100%;
+    height: 65%;
+    padding: .1pc;
+}
+
+.item-info {
+    display: flex;
+    flex-flow: column;
+    gap: .2pc;
+    padding: .1pc;
+}
+
+.item-title {
+    padding: 0 0 .5pc 1pc;
+    border-bottom: .1pc solid;
+}
+
+.i-info {
+    display: flex;
+    justify-content: space-between;
+    padding: .2pc 4pc .2pc 4pc;
+    border-bottom: .1pc solid;
+}
+
+.item-actions {
+    padding: .2pc .5pc .2pc .5pc;
+}
+
+.item-btn {
+    height: 2pc;
+    width: 6pc;
+}
+
+.footer {
+    height: 4pc;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* styles for displays greater than 996px : laptop, desktop */
+
+@media only screen and (min-width: 996px) {
+    .search {
+        width: 15%;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+    }
+    .c-header {
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(20pc, auto);
+        gap: 1pc;
+        padding: 1pc;
+    }
+    .i-info {
+        padding: .2pc 3pc .2pc 3pc;
+    }
+    .item-btn {
+        height: 2pc;
+        width: 4.5pc;
+    }
+    .ds-none {
+        display: none;
+    }
+}
+
+
+/* styles for display less than 500px : Iphone SE, Samsung Galaxy */
+
+@media only screen and (max-width: 500px) {
+    .search {
+        width: 65%;
+    }
+    /* container transformed from grid to flex */
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 1pc;
+    }
+    /* menu to appear when a vertical bars menu is clicked - use js*/
+    .v-menu {
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+        width: 70%;
+        height: 15vh;
+        overflow: scroll;
+        background-color: rgb(233, 233, 233);
+    }
+
+    .tile {
+        padding-left: 3.5pc;
+        padding-right: 3.5pc;
+    }
+    .h-img {
+        width: 70%;
+    }
+    /* make item-card children - image, fonts, etc; smaller to fit two cards in each row */
+    .content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .item-card {
+        width: 80%;
+    }
+}
